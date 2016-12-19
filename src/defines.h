@@ -55,6 +55,8 @@ int clock_gettime(int /*clk_id*/, struct timespec* t) {
 #define CLOCK_MONOTONIC 0
 #endif
 
+
+// Timer use std::chrono maybe a faster way.
 class Timer {
 public:
     struct timespec _start;
@@ -75,8 +77,8 @@ public:
 void pin_to_core(size_t core) {
 #ifdef _GNU_SOURCE
     cpu_set_t cpuset;
-    CPU_ZERO(&cpuset);
-    CPU_SET(core, &cpuset);
+    CPU_ZERO(&cpuset); // clear set, so that it contains no cpu.
+    CPU_SET(core, &cpuset); // add cpu  to cpuset
     pthread_setaffinity_np(pthread_self(), sizeof(cpu_set_t), &cpuset);
 #endif
 }

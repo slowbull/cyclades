@@ -38,7 +38,7 @@ class LSDatapoint : public Datapoint {
 	    double weight;
 	    input >> index;
 	    if (!input) {
-		break;
+		break; // case if there is only coordinates no weights in the end
 	    }
 	    input >> weight;
 	    coordinates.push_back(index);

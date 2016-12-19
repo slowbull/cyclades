@@ -14,6 +14,7 @@
 *    limitations under the License.
 */
 
+// #ifndef #define #endif in the header file,  prevents from double declaration!
 #ifndef _DATASET_READER_
 #define _DATASET_READER_
 

@@ -87,6 +87,7 @@ protected:
 	}
     }
 
+	// lazy update. catch up update
     virtual void CatchUp(int index, int diff) {
 	if (!NeedCatchUp()) return;
 	if (diff < 0) diff = 0;

@@ -63,6 +63,7 @@ class LSModel : public Model {
 	Initialize(input_line);
     }
 
+	// generate label y.
     void SetUp(const std::vector<Datapoint *> &datapoints) override {
 	B.resize(datapoints.size());
 

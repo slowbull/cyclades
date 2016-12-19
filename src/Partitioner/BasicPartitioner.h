@@ -36,6 +36,7 @@ class BasicPartitioner : public Partitioner {
 	// Calculate load per thread. Then distribute.
 	int n_points_per_thread = datapoints_copy.size() / n_threads;
 	for (int thread = 0; thread < n_threads; thread++) {
+		// efficient way.  end = 1 ? 2 ? 3 is not efficient. 
 	    int start = n_points_per_thread * thread;
 	    int end = n_points_per_thread * (thread+1);
 	    if (thread == n_threads-1) end = datapoints.size();
